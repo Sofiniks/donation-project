@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useMediaQuery } from "react-responsive";
+import Donations from "./components/Donations";
+import Heading from "./components/Heading";
+import Projects from "./components/Projects";
 
 function App() {
+  const isMobile = useMediaQuery({ query: "(max-width: 360px)" });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section className='project-section'>
+        {isMobile ? (
+          <Heading black>Те, кому сейчас необходимо помочь</Heading>
+        ) : (
+          <Heading black>Проекты, которым необходимо помочь</Heading>
+        )}
+        <Projects />
+      </section>
+      <section className='donation-section'>
+        <Heading>О пожертвованиях</Heading>
+        <Donations />
+      </section>
+    </>
   );
 }
 

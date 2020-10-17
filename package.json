@@ -6,9 +6,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "adaptive-react-slider": "^2.1.2",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-icons": "^3.11.0",
+    "react-responsive": "^8.1.0",
+    "react-scripts": "3.4.3",
+    "styled-components": "^5.2.0",
+    "swiper": "^6.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
