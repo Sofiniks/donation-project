@@ -8,15 +8,16 @@ function App() {
   const isMobile = useMediaQuery({ query: "(max-width: 360px)" });
   return (
     <>
-      <section className='project-section'>
-        {isMobile ? (
-          <Heading black>Те, кому сейчас необходимо помочь</Heading>
-        ) : (
-          <Heading black>Проекты, которым необходимо помочь</Heading>
-        )}
+      {/* Здесь можно сам текст менять по квери */}
+      <section className="project-section">
+        <Heading black>{`${
+          isMobile
+            ? "Те кому необходимо помочь"
+            : "Проекты, которым необходимо помочь"
+        }`}</Heading>
         <Projects />
       </section>
-      <section className='donation-section'>
+      <section className="donation-section">
         <Heading>О пожертвованиях</Heading>
         <Donations />
       </section>

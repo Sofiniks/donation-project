@@ -7,7 +7,7 @@ import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
 
 SwiperCore.use([Pagination]);
-
+/* Слайдер не переиспользуемый */
 export default function Slider() {
   const list = projects.map((item) => {
     return (

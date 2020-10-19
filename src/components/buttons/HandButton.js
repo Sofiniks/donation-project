@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+/* СВГ иконки лучше экспортировать с фигмы, зачем нам посторонняя реакт либа */
 import { IoIosHand } from "react-icons/io";
 
 const Button = styled.button`
