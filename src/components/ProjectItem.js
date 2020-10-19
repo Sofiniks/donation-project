@@ -171,11 +171,12 @@ export default function ProjectItem(props) {
     query: "(max-width: 768px)",
   });
   const isMobile = useMediaQuery({ query: "(max-width: 360px)" });
+  /* Сделай компонент более динамические, чтобы он разные тэги принимал, количество процентов и дату окончания  */
   return (
     <Project>
       <article>
         <ImgContainer logo={logo}>
-          <img src={img} alt='children' />
+          <img src={img} alt="children" />
           <div>
             <TiLocation />
             <h5>{location}</h5>
@@ -189,21 +190,22 @@ export default function ProjectItem(props) {
         ) : null}
         <h4>{heading}</h4>
         <p>{text}</p>
-        <div className='info'>
-          <div className='percents'>
+        <div className="info">
+          <div className="percents">
             <h5>37%</h5>
           </div>
-          <div className='money'>
+          <div className="money">
             <h5>необходимо собрать</h5>
             <p>
               <span style={{ color: "#8dca78" }}>45 194</span> из 1 000 000 RUB
             </p>
           </div>
-          <div className='deadline'>
+          <div className="deadline">
             <h5>конец</h5>
             <p>завтра</p>
           </div>
         </div>
+        {/* Можно просто через media не показывать */}
         {isTablet && !isMobile ? null : (
           <>
             <Tag>помощь нуждающимся</Tag>

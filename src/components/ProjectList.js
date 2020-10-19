@@ -18,7 +18,7 @@ const List = styled.ul`
     align-items: center;
   }
 `;
-
+/* Можно только featured projects оставить */
 export default function ProjectList() {
   let list = projects.map((item) => {
     return <ProjectItem key={item.id} {...item} />;

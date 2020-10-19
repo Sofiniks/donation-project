@@ -15,13 +15,12 @@ const List = styled.ul`
 `;
 
 export default function FeaturedProjects({ featured }) {
-  let featuredProjects = [];
-  for (let i = 0; i <= featured - 1; i++) {
-    featuredProjects.push(projects[i]);
-  }
-  let list = featuredProjects.map((item) => {
-    return <ProjectItem key={item.id} {...item} />;
-  });
-
-  return <List>{list}</List>;
+  const list = featured ? projects.slice(0, featured) : projects;
+  return (
+    <List>
+      {list.map((item) => (
+        <ProjectItem {...item} key={item.id} />
+      ))}
+    </List>
+  );
 }
