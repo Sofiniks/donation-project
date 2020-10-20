@@ -5,7 +5,7 @@ import Heading from "./components/Heading";
 import Projects from "./components/Projects";
 
 function App() {
-  const isMobile = useMediaQuery({ query: "(max-width: 360px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 425px)" });
   return (
     <>
       <section className='project-section'>

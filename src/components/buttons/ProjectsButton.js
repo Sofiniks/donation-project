@@ -8,6 +8,10 @@ const ButtonWrapper = styled.div`
   overflow-x: hidden;
   padding: 30px 0;
 
+  @media screen and (max-width: 425px) {
+    padding: 5px 0 20px 0;
+  }
+
   button {
     cursor: pointer;
   }
@@ -43,7 +47,7 @@ const Button = styled.button`
   border: 1px solid transparent;
   border-radius: 30px;
   color: #b19b69;
-  box-shadow: 0 5px 18px #e5decc;
+  box-shadow: 0 5px 12px #e5decc;
 `;
 
 export default function ProjectsButton({ children, onClick }) {

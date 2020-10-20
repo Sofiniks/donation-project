@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import Tag from "./Tag";
 import HandButton from "./buttons/HandButton";
 import { TiLocation } from "react-icons/ti";
+import PercentsImg from "../assets/percents.svg";
 
 const Project = styled.li`
   max-width: 360px;
@@ -18,13 +19,16 @@ const Project = styled.li`
   @media screen and (max-width: 768px) {
     max-width: 325px;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     width: 320px;
     padding: 0 10px 60px 10px;
+    margin-bottom: 70px;
   }
   article {
-    @media screen and (max-width: 360px) {
-      padding-right: 10px;
+    @media screen and (max-width: 425px) {
+      padding-right: 20px;
+      padding-left: 20px;
+      max-width: 320px;
     }
   }
 
@@ -39,13 +43,21 @@ const Project = styled.li`
     right: 20px;
     z-index: -1;
     border-radius: 0 0 7px 7px;
+
+    @media screen and (max-width: 768px) {
+      height: calc(100% - 19px);
+    }
+    @media screen and (max-width: 425px) {
+      right: 0;
+      max-width: 320px;
+    }
   }
 
   &:before {
     @media screen and (max-width: 768px) {
       content: "";
       display: block;
-      min-width: 100%;
+      width: 100%;
       height: calc(100% - 19px);
       background-color: #f3f3f3;
       position: absolute;
@@ -53,6 +65,10 @@ const Project = styled.li`
       right: 20px;
       z-index: -1;
       border-radius: 0 0 7px 7px;
+    }
+    @media screen and (max-width: 425px) {
+      right: 0;
+      max-width: 100%;
     }
   }
 
@@ -66,6 +82,9 @@ const Project = styled.li`
       display: block;
       transform: translate(-50%, 0);
     }
+    @media screen and (max-width: 425px) {
+      left: calc(50%);
+    }
   }
 
   &:hover button {
@@ -75,7 +94,7 @@ const Project = styled.li`
   h4 {
     font-size: 16px;
     margin-bottom: 20px;
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 425px) {
       font-size: 14px;
     }
   }
@@ -87,14 +106,14 @@ const Project = styled.li`
   .info {
     display: flex;
     color: #7d7d7d;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 90%;
 
     @media screen and (max-width: 768px) {
-      padding-bottom: 30px;
-    }
-    @media screen and (max-width: 768px) {
       padding-bottom: 0;
+    }
+    @media screen and (max-width: 425px) {
+      line-height: 20px;
     }
 
     p {
@@ -104,18 +123,31 @@ const Project = styled.li`
   }
 
   .percents {
-    width: 40px;
+    min-width: 40px;
     height: 40px;
+    background-color: #fff;
     border-radius: 50%;
     color: #8dca78;
-    border: 2px solid #e0e0e0;
+    border: 3px solid #e0e0e0;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
 
     h5 {
       font-weight: bold;
+      font-size: 8px;
     }
+    img {
+      position: absolute;
+      bottom: -1px;
+    }
+  }
+  .money {
+    margin-right: 25px;
   }
 `;
 
@@ -152,7 +184,7 @@ const ImgContainer = styled.div`
     @media screen and (max-width: 768px) {
       width: 285px;
     }
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 425px) {
       max-width: 280px;
     }
   }
@@ -175,7 +207,7 @@ export default function ProjectItem(props) {
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
-  const isMobile = useMediaQuery({ query: "(max-width: 360px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 425px)" });
   return (
     <Project>
       <article>
@@ -197,6 +229,7 @@ export default function ProjectItem(props) {
         <div className='info'>
           <div className='percents'>
             <h5>{percents}</h5>
+            <img src={PercentsImg} alt='percents' />
           </div>
           <div className='money'>
             <h5>необходимо собрать</h5>

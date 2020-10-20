@@ -8,7 +8,7 @@ export default function Projects() {
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
-  const isMobile = useMediaQuery({ query: "(max-width: 360px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 425px)" });
   const [toggleProjects, setToggleProjects] = useState(false);
   const handleClick = () => {
     setToggleProjects(true);

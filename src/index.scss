@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   line-height: 26px;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     font-size: 14px;
     line-height: 24px;
   }
@@ -36,7 +36,7 @@ h2 {
   line-height: 40px;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 425px) {
   h1 {
     font-size: 30px;
     line-height: 35px;
@@ -61,7 +61,7 @@ h3 {
   letter-spacing: 0.5em;
   text-transform: uppercase;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     font-size: 10px;
     line-height: 20px;
   }
@@ -101,8 +101,8 @@ img {
     padding: 10px 40px;
   }
 
-  @media screen and (max-width: 360px) {
-    padding: 10px 30px 70px 35px;
+  @media screen and (max-width: 425px) {
+    padding: 10px 30px 50px 30px;
   }
 }
 
@@ -111,7 +111,7 @@ img {
   padding: 80px 90px;
   overflow: hidden;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     padding: 60px 10px;
   }
 }

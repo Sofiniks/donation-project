@@ -19,7 +19,7 @@ const Button = styled.button`
     top: 8%;
     left: ${({ prev }) => (prev ? "5%" : "90%")};
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     top: 5%;
   }
   svg {

@@ -17,7 +17,7 @@ export default function Slider() {
     );
   });
   return (
-    <Swiper pagination={{ clickable: true }} spaceBetween={50}>
+    <Swiper pagination={{ clickable: true }} spaceBetween={40}>
       {list}
     </Swiper>
   );

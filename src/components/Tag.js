@@ -12,7 +12,7 @@ const TagElement = styled.div`
   @media screen and (max-width: 768px) {
     margin-bottom: 20px;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     margin-bottom: 0;
   }
 

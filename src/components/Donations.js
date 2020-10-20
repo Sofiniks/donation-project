@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     padding-bottom: 60px;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     padding-bottom: 0;
   }
 `;
@@ -34,7 +34,7 @@ const DonationsList = styled.ul`
     width: ${({ width }) => width}px;
     transform: translate(-${({ translateValue }) => translateValue}px, 0);
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     transform: translate(-${({ translateValue }) => translateValue / 2}px, 0);
   }
 `;
@@ -46,7 +46,7 @@ const DonationItem = styled.li`
   @media screen and (max-width: 768px) {
     margin-right: 100px;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 425px) {
     margin-right: 30px;
     margin-bottom: 5px;
   }
@@ -61,7 +61,7 @@ const DonationContent = styled.div`
 `;
 
 export default function Donations() {
-  const isMobile = useMediaQuery({ query: "(max-width: 360px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 425px)" });
   const [activeItem, setActiveItem] = useState(0);
   const [translateValue, setTranslateValue] = useState(0);
 
