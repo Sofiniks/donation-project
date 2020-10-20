@@ -55,6 +55,13 @@ const DonationContent = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;
+  padding-left: 100px;
+  padding-top: 40px;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 0;
+    padding-top: 0;
+  }
   button {
     margin-top: 40px;
   }

@@ -6,7 +6,7 @@ const ButtonWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
-  padding: 30px 0;
+  padding: 10px 0 20px 0;
 
   @media screen and (max-width: 425px) {
     padding: 5px 0 20px 0;
