@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { IoIosHand } from "react-icons/io";
+import HandIcon from "../../assets/hand.svg";
 
 const Button = styled.button`
   width: 60px;
@@ -15,10 +15,11 @@ const Button = styled.button`
   box-shadow: 0 5px 18px #689ef4;
   cursor: pointer;
 
-  svg {
+  img {
     width: 25px;
     height: 35px;
-    transform: scale(-1, 1);
+    display: block;
+    transform: scale(0.7, 0.7) translateX(100%);
   }
 
   &:hover {
@@ -29,7 +30,7 @@ const Button = styled.button`
 export default function HandButton() {
   return (
     <Button>
-      <IoIosHand />
+      <img src={HandIcon} alt='hand' />
     </Button>
   );
 }

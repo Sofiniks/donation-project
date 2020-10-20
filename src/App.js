@@ -9,11 +9,11 @@ function App() {
   return (
     <>
       <section className='project-section'>
-        {isMobile ? (
-          <Heading black>Те, кому сейчас необходимо помочь</Heading>
-        ) : (
-          <Heading black>Проекты, которым необходимо помочь</Heading>
-        )}
+        <Heading black>{`${
+          isMobile
+            ? "Те, кому сейчас необходимо помочь"
+            : "Проекты, которым необходимо помочь"
+        }`}</Heading>
         <Projects />
       </section>
       <section className='donation-section'>

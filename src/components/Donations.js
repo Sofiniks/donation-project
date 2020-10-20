@@ -18,12 +18,17 @@ const Wrapper = styled.div`
     flex-direction: column;
     padding-bottom: 60px;
   }
+  @media screen and (max-width: 360px) {
+    padding-bottom: 0;
+  }
 `;
 
 const DonationsList = styled.ul`
   overflow: hidden;
   width: 100%;
   padding: 30px;
+  transform: translateY(-${({ translateValue }) => translateValue / 4}px);
+  overflow-y: hidden;
   @media screen and (max-width: 768px) {
     display: flex;
     width: ${({ width }) => width}px;

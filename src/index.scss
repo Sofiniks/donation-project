@@ -94,18 +94,21 @@ img {
 }
 
 .project-section {
-  padding: 70px;
+  padding: 10px 70px 100px 70px;
   max-width: 100%;
 
+  @media screen and (max-width: 768px) {
+    padding: 10px 40px;
+  }
+
   @media screen and (max-width: 360px) {
-    padding: 10px;
-    overflow: hidden;
+    padding: 10px 30px 70px 35px;
   }
 }
 
 .donation-section {
   background-color: #005ef3;
-  padding: 70px;
+  padding: 80px 90px;
   overflow: hidden;
 
   @media screen and (max-width: 360px) {

@@ -13,6 +13,8 @@ export const projects = [
     img: img1,
     logo: logo2,
     location: "Омск",
+    percents: "37%",
+    deadline: "завтра",
   },
   {
     id: 2,
@@ -22,6 +24,8 @@ export const projects = [
     img: img3,
     logo: logo1,
     location: "Омск",
+    percents: "84%",
+    deadline: "завтра",
   },
   {
     id: 3,
@@ -31,6 +35,8 @@ export const projects = [
     img: img2,
     logo: logo1,
     location: "Омск",
+    percents: "58%",
+    deadline: "завтра",
   },
 ];
 

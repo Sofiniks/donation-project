@@ -19,9 +19,13 @@ const Project = styled.li`
     max-width: 325px;
   }
   @media screen and (max-width: 360px) {
-    max-width: 320px;
-    padding: 0 30px 70px 0;
-    margin-left: 20px;
+    width: 320px;
+    padding: 0 10px 60px 10px;
+  }
+  article {
+    @media screen and (max-width: 360px) {
+      padding-right: 10px;
+    }
   }
 
   &:hover:before {
@@ -41,7 +45,7 @@ const Project = styled.li`
     @media screen and (max-width: 768px) {
       content: "";
       display: block;
-      width: 100%;
+      min-width: 100%;
       height: calc(100% - 19px);
       background-color: #f3f3f3;
       position: absolute;
@@ -84,6 +88,7 @@ const Project = styled.li`
     display: flex;
     color: #7d7d7d;
     justify-content: space-around;
+    width: 90%;
 
     @media screen and (max-width: 768px) {
       padding-bottom: 30px;
@@ -166,7 +171,7 @@ const ImgContainer = styled.div`
 `;
 
 export default function ProjectItem(props) {
-  const { heading, text, img, logo, location } = props;
+  const { heading, text, img, logo, location, percents, deadline } = props;
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
@@ -175,7 +180,7 @@ export default function ProjectItem(props) {
     <Project>
       <article>
         <ImgContainer logo={logo}>
-          <img src={img} alt='children' />
+          <img src={img} alt='project' />
           <div>
             <TiLocation />
             <h5>{location}</h5>
@@ -191,7 +196,7 @@ export default function ProjectItem(props) {
         <p>{text}</p>
         <div className='info'>
           <div className='percents'>
-            <h5>37%</h5>
+            <h5>{percents}</h5>
           </div>
           <div className='money'>
             <h5>необходимо собрать</h5>
@@ -201,7 +206,7 @@ export default function ProjectItem(props) {
           </div>
           <div className='deadline'>
             <h5>конец</h5>
-            <p>завтра</p>
+            <p>{deadline}</p>
           </div>
         </div>
         {isTablet && !isMobile ? null : (

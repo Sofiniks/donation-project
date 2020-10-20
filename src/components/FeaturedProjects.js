@@ -6,22 +6,21 @@ import { projects } from "../data";
 const List = styled.ul`
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 33.3% 33.3% 33.3%;
   gap: 30px;
 
   @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
   }
 `;
 
 export default function FeaturedProjects({ featured }) {
-  let featuredProjects = [];
-  for (let i = 0; i <= featured - 1; i++) {
-    featuredProjects.push(projects[i]);
-  }
-  let list = featuredProjects.map((item) => {
-    return <ProjectItem key={item.id} {...item} />;
-  });
-
-  return <List>{list}</List>;
+  const list = featured ? projects.slice(0, featured) : projects;
+  return (
+    <List>
+      {list.map((item) => (
+        <ProjectItem {...item} key={item.id} />
+      ))}
+    </List>
+  );
 }

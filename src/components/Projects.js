@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import FeaturedProjects from "./FeaturedProjects";
-import ProjectList from "./ProjectList";
 import Slider from "./Slider";
 import ProjectsButton from "./buttons/ProjectsButton";
 import { useMediaQuery } from "react-responsive";
@@ -10,28 +9,21 @@ export default function Projects() {
     query: "(max-width: 768px)",
   });
   const isMobile = useMediaQuery({ query: "(max-width: 360px)" });
-  const [fullProjectsList, setFullProjectsList] = useState(false);
+  const [toggleProjects, setToggleProjects] = useState(false);
   const handleClick = () => {
-    setFullProjectsList(true);
+    setToggleProjects(true);
   };
+  const featured = !toggleProjects ? (isTablet ? 2 : 3) : null;
   return (
-    <div>
-      {fullProjectsList ? (
-        <ProjectList />
-      ) : isMobile ? (
-        <Slider />
-      ) : isTablet ? (
-        <FeaturedProjects featured={2} />
-      ) : (
-        <FeaturedProjects featured={3} />
-      )}
+    <>
+      {isMobile ? <Slider /> : <FeaturedProjects featured={featured} />}
       <div className='centered'>
-        {fullProjectsList ? null : (
+        {toggleProjects ? null : (
           <ProjectsButton onClick={handleClick}>
             Смотреть все проекты
           </ProjectsButton>
         )}
       </div>
-    </div>
+    </>
   );
 }
