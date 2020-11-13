@@ -9,7 +9,7 @@ const StyledHeading = styled.h3`
   position: relative;
   margin-bottom: 40px;
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 660px) {
     margin-bottom: 20px;
   }
 

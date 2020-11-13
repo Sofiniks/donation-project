@@ -10,7 +10,7 @@ const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 660px) {
     width: 260px;
     height: 60px;
   }

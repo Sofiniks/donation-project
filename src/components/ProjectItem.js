@@ -16,19 +16,22 @@ const Project = styled.li`
   position: relative;
   transition: all 0.3s ease;
   margin-bottom: 80px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1160px) {
     max-width: 325px;
   }
-  @media screen and (max-width: 425px) {
-    width: 320px;
+  @media screen and (max-width: 660px) {
+    max-width: 320px;
     padding: 0 10px 60px 10px;
     margin-bottom: 70px;
   }
   article {
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 660px) {
       padding-right: 20px;
       padding-left: 20px;
       max-width: 320px;
+    }
+    @media screen and (max-width: 350px) {
+      max-width: 270px;
     }
   }
 
@@ -44,29 +47,29 @@ const Project = styled.li`
     z-index: -1;
     border-radius: 0 0 7px 7px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1160px) {
       height: calc(100% - 19px);
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 660px) {
       right: 0;
       max-width: 320px;
     }
   }
 
   &:before {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1160px) {
       content: "";
       display: block;
       width: 100%;
-      height: calc(100% - 19px);
+      height: calc(100% - 7px);
       background-color: #f3f3f3;
       position: absolute;
-      top: 19px;
+      top: 7px;
       right: 20px;
       z-index: -1;
       border-radius: 0 0 7px 7px;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 660px) {
       right: 0;
       max-width: 100%;
     }
@@ -78,11 +81,11 @@ const Project = styled.li`
     bottom: -19px;
     transform: translate(-50%, 50%);
     display: none;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1160px) {
       display: block;
       transform: translate(-50%, 0);
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 660px) {
       left: calc(50%);
     }
   }
@@ -94,7 +97,7 @@ const Project = styled.li`
   h4 {
     font-size: 16px;
     margin-bottom: 20px;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 660px) {
       font-size: 14px;
     }
   }
@@ -106,13 +109,14 @@ const Project = styled.li`
   .info {
     display: flex;
     color: #7d7d7d;
-    justify-content: flex-start;
-    width: 90%;
+    justify-content: space-between;
+    padding-right: 20px;
+    
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1160px) {
       padding-bottom: 0;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 660px) {
       line-height: 20px;
     }
 
@@ -120,6 +124,9 @@ const Project = styled.li`
       font-weight: bold;
       font-size: 12px;
     }
+  }
+  .info-money {
+    display: flex;
   }
 
   .percents {
@@ -146,9 +153,7 @@ const Project = styled.li`
       bottom: -1px;
     }
   }
-  .money {
-    margin-right: 25px;
-  }
+  
 `;
 
 const ImgContainer = styled.div`
@@ -165,7 +170,7 @@ const ImgContainer = styled.div`
     left: 29px;
     z-index: -1;
     border-radius: 0 0 7px 7px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1160px) {
       display: none;
     }
   }
@@ -181,11 +186,17 @@ const ImgContainer = styled.div`
     width: 320px;
     border-radius: 0 7px 7px 7px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1160px) {
       width: 285px;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 660px) {
       max-width: 280px;
+      height: 160px;
+      background-size: cover;
+    }
+    @media screen and (max-width: 350px) {
+      max-width: 230px;
+      height: 100%;
     }
   }
   div {
@@ -205,9 +216,9 @@ const ImgContainer = styled.div`
 export default function ProjectItem(props) {
   const { heading, text, img, logo, location, percents, deadline } = props;
   const isTablet = useMediaQuery({
-    query: "(max-width: 768px)",
+    query: "(max-width: 1160px)",
   });
-  const isMobile = useMediaQuery({ query: "(max-width: 425px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 660px)" });
   return (
     <Project>
       <article>
@@ -227,15 +238,17 @@ export default function ProjectItem(props) {
         <h4>{heading}</h4>
         <p>{text}</p>
         <div className='info'>
-          <div className='percents'>
-            <h5>{percents}</h5>
-            <img src={PercentsImg} alt='percents' />
-          </div>
-          <div className='money'>
-            <h5>необходимо собрать</h5>
-            <p>
-              <span style={{ color: "#8dca78" }}>45 194</span> из 1 000 000 RUB
+          <div className='info-money'>
+            <div className='percents'>
+              <h5>{percents}</h5>
+              <img src={PercentsImg} alt='percents' />
+            </div>
+            <div className='money'>
+              <h5>необходимо собрать</h5>
+              <p>
+                <span style={{ color: "#8dca78" }}>45 194</span> из 1 000 000 RUB
             </p>
+            </div>
           </div>
           <div className='deadline'>
             <h5>конец</h5>

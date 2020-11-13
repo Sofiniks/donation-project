@@ -6,9 +6,9 @@ import { useMediaQuery } from "react-responsive";
 
 export default function Projects() {
   const isTablet = useMediaQuery({
-    query: "(max-width: 768px)",
+    query: "(max-width: 1160px)",
   });
-  const isMobile = useMediaQuery({ query: "(max-width: 425px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 660px)" });
   const [toggleProjects, setToggleProjects] = useState(false);
   const handleClick = () => {
     setToggleProjects(true);

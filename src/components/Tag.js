@@ -9,10 +9,10 @@ const TagElement = styled.div`
   margin-right: 10px;
   background-color: #ffffff;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1160px) {
     margin-bottom: 20px;
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 660px) {
     margin-bottom: 0;
   }
 

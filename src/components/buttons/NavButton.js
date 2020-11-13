@@ -8,19 +8,20 @@ const Button = styled.button`
   background-color: transparent;
   position: absolute;
   left: 5%;
-  top: ${({ prev }) => (prev ? "10%" : null)};
-  bottom: ${({ next }) => (next ? "10%" : null)};
+  top: ${({ prev }) => (prev ? "0%" : null)};
+  bottom: ${({ next }) => (next ? "0%" : null)};
   border: none;
   cursor: pointer;
   outline: none;
   z-index: 2;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1160px) {
     cursor: pointer;
-    top: 8%;
-    left: ${({ prev }) => (prev ? "5%" : "90%")};
+    top: 4%;
+    left: ${({ prev }) => (prev ? "-2%" : "95%")};
   }
-  @media screen and (max-width: 425px) {
-    top: 5%;
+  @media screen and (max-width: 660px) {
+    top: 0;
+    left: ${({ prev }) => (prev ? "-5%" : "95%")};
   }
   svg {
     transform: ${({ prev }) => (prev ? "rotate(-90deg)" : "rotate(90deg)")};
@@ -30,7 +31,7 @@ const Button = styled.button`
       stroke: #fff;
       stroke-width: 1;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1160px) {
       transform: ${({ prev }) => (prev ? "rotate(-180deg)" : "rotate(0)")};
     }
   }

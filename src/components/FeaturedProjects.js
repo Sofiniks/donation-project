@@ -9,7 +9,7 @@ const List = styled.ul`
   grid-template-columns: 33.3% 33.3% 33.3%;
   gap: 30px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1160px) {
     grid-template-columns: 50% 50%;
   }
 `;
